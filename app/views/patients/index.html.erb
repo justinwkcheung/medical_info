@@ -1,0 +1,14 @@
+<h1>Patient Data</h1>
+
+<div>
+  <p>Name of patient: <%= @data['name'][0]['given'][0] %> <%= @data['name'][0]['family'][0] %></p>
+  <p>Organization name: <%= @data['managingOrganization']['display'] %></p>
+  <p>Gender: <%= @data['gender'].capitalize %></p>
+  <p>Number of conditions they have: <%= @data['conditions'].count %></p>
+  <p>List of all conditions:</p>
+  <ul>
+    <% @data['conditions'].each do |cond| %>
+      <li><%= cond %> </li>
+    <% end %>
+  </ul>
+</div> 
